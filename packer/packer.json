@@ -1,0 +1,19 @@
+{
+    "builders": [
+      {
+        "type": "googlecompute",
+        "project_id": "packer-346211",
+        "source_image_family": "centos-7",
+        "ssh_username": "packer",
+        "zone": "europe-west2-a",
+        "image_description": "custom machine image",
+        "image_name": "presentation-image"
+      }
+   ],
+   "provisioners": [
+     {
+       "type": "ansible",
+       "playbook_file": "../ansible/playbook.yml"
+     }
+    ]
+  }
